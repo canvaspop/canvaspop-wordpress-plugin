@@ -99,7 +99,7 @@ This section describes how to install the plugin and get it working.
 
 > We accept VISA, AMEX, MC, and PayPal.
 
-= What currencies do you accept?
+### What currencies do you accept?
 
 > Payments will be settled in USD; however, prices will be displayed in either USD, CAD, EURO, and GBP depending on where the customer is located. If local currency is not supported, display price will default to USD.
 

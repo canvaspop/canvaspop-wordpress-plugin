@@ -6,10 +6,10 @@
  * The User Interface to the end user.
  *
  * @package   CanvasPop Photo Printing API
- * @author    Ryan Johnson <ryan@canvaspop.com>
+ * @author    CanvasPop <support@canvaspop.com>
  * @license   GPL-2.0+
  * @link      http://developer.canvaspop.com
- * @copyright 2013 CanvasPop
+ * @copyright 2016 CanvasPop
  */
 ?>
 <div class="wrap">
