@@ -1,0 +1,36 @@
+/* This stylesheet is used to style the public view of the plugin. */
+
+.cp-img--container{
+	position:relative;
+	display:inline-block;
+}
+
+.cp-btn.btn{
+	background:#ec008c;;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	color:#fff !important;
+	text-decoration:none;
+	font-size:14px;
+	font-weight:bold;
+	display:inline-block;
+	padding:7px 20px 8px 20px;
+	font-family:Helvetica, Arial, sans-serif;
+	text-align:center;
+	border:none;
+}
+	.cp-btn.btn:hover, .cp-btn.btn:active{
+		background:#ec008c;
+		border:none;
+		text-decoration:none;
+	}
+	
+	.btn.cp-btn--overlayed{
+		position:absolute;
+		top:11px;
+		right:5px;
+		padding:5px 10px 6px 10px;
+		font-size:10px;
+		-webkit-border-radius: 2px;
+		border-radius: 2px;
+	}

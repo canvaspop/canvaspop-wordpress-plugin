@@ -1,0 +1,66 @@
+/* This stylesheet is used to style the admin option form of the plugin. */
+
+input[type=text], select{
+	width:300px;
+}
+
+input.small{
+	width:80px;
+}
+
+.api--header{
+	background:url('../assets/heroHeader.png') #000 no-repeat center right;
+	height:200px;
+	margin:0px 0 20px -20px;
+	padding:50px 0 0 40px;
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;   
+	box-sizing: border-box;        
+}
+	.api--header p{
+		font-size:20px;
+		color:#fff;
+		font-weight:bold;
+		margin:0 0 10px 0;
+	}
+	.api--header h1{
+		color:#fff;
+		text-shadow:0px 0px 0px #fff;
+		font-size:30px;
+		line-height:32px;
+		margin:0 0 10px 0;
+	}
+	.api--header h2{
+		font-size:18px;
+		font-weight:normal;
+		margin:0;
+		color:#fff;
+		text-shadow:0px 0px 0px #fff;
+	}
+	
+.comments{
+	color:#666666;
+	margin-left:2px;
+}
+
+.code.code--block{
+	background:#efefef;
+	padding:13px 20px;
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;   
+	box-sizing: border-box; 
+	display:inline-block;
+}
+
+.colorpick{
+	float:left;
+}
+
+.color{
+	height:23px;
+	width:23px;
+	float:left;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	margin:1px 0 0 5px;
+}
