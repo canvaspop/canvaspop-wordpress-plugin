@@ -1,114 +1,178 @@
-=== Plugin Name ===
-Contributors: (this should be a list of wordpress.org userids)
-Donate link: http://example.com/
-Tags: comments, spam
+# CanvasPop Photo Printing API
+
+Contributors: karlcanvaspop
+Donate link: http://developers.canvaspop.com/
+Tags: api, canvas, print, image, photo
 Requires at least: 3.5.1
 Tested up to: 3.6
 Stable tag: 1.0.0
-License: GPLv2 or later
+License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+CanvasPop Photo Printing API is a simple and powerful way to offer customers the ability to purchase world class
+handcrafted canvas prints.
 
-== Description ==
+## Description
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+Pop-up Store is a simple and powerful way to offer customers the ability to purchase world class handcrafted canvas
+prints that are shipped right to their door. Inside you'll find implementation guides and reference documentation for
+all of the components that make up Pop-up Store.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+This plugin allows you to automatically add a "Print" button to your images. Users can then click the "Print" button
+to open a cart in a modal and purchase a piece of art.
 
-A few notes about the sections above:
+When a user opens a cart, the image provided in the link is submitted to protected environment where it is resized and
+prepared for print. Once a user places an order, you can access information about that order in your API admin panel.
 
-*   "Contributors" is a comma separated list of wp.org/wp-plugins.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
+To learn more about out API, please visit https://developers.canvaspop.com/
 
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
-
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
-
-== Installation ==
+## Installation
 
 This section describes how to install the plugin and get it working.
 
-e.g.
+1. Upload `canvaspop-wordpress-plugin` folder to the `/wp-content/plugins/` directory
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Sign up for a CanvasPop API account at https://developers.canvaspop.com/sign-up
+4. Add your information in the plugin Settings section.
 
-1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
+## Frequently Asked Questions
 
-== Frequently Asked Questions ==
+### A question that someone might have
 
-= A question that someone might have =
+> An answer to that question.
 
-An answer to that question.
+### What products do you offer? =
 
-= What about foo bar? =
+> We currently offer canvas prints, and plan to roll out new products in the near future. Stay tuned!
 
-Answer to foo bar dilemma.
+### What sizes can I print? =
 
-== Screenshots ==
+> We offer canvas prints ranging in size from 8"x10" all the way to 38"x76".
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+### Who does your printing? =
 
-== Changelog ==
+> We own and operate all of the printing to ensure the highest level of quality.
 
-= 1.0 =
-* A change since the previous version.
-* Another change.
+### Do you guarantee your products? =
 
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
+> All of our products come with a 100% satisfaction guarantee.
 
-== Upgrade Notice ==
+### Who handles customer service? =
 
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
+> CanvasPop will handle all first-line customer service for you. We like to think of ourselves as "customer obsessed". We'll do everything in our power to ensure your customers are not just satisfied, but absolutely in love with their new canvas prints.
 
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
+### As a partner, can I set my own prices for Pop-up Store? =
 
-== Arbitrary section ==
+> Yes. Every API partner may set their own markup rate by sending an email to api.support@canvaspop.com. This markup percentage is used in the calculation of the price of canvas, frame, and edge options.
 
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
+### Do you support mobile? =
 
-== A brief Markdown Example ==
+> Absolutely. Our API works across web, touch and mobile.
 
-Ordered list:
+### Do you support viewing Pop-up Store in other languages and currencies? =
 
-1. Some feature
-1. Another feature
-1. Something else about the plugin
+> Yes. Once the store is opened, we geolocate each user using their IP address. From there we select the appropriate currency and language that is appropriate for that region.
 
-Unordered list:
+> We currently support the following languages: Danish, Dutch, English, Finnish, French, German, Italian, Polish, Portuguese, Spanish, Swedish. We currently support the following currencies: US Dollar (USD), Canadian Dollar (CAD), Euro (EUR), and Pound (GBP). Still want to change them? Don't worry, a user is able to manually switch their language and/or currency using the links at the bottom of the page. To see how this looks within Pop-up Store see our examples page.
 
-* something
-* something else
-* third thing
+### Where are you able to ship to? =
 
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
+> We currently ship to the United States, the European Union and Canada.
 
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
+### How long will it take my customers to receive their canvas? =
 
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
+> Your customer will receive their order in 7 to 10 days.
 
-`<?php code(); // goes in backticks ?>`
+### What are the shipping costs? =
+
+> Shipping to the US and Canada is a flat rate of just $14 per order. International orders are $39.95.
+
+### Do I need my own payment gateway? =
+
+> No need to have your own gateway. We take care of that for you!
+
+### How do I track my sales? =
+
+> You will have your very own admin dashboard to track all of your sales and products.
+
+### What types of payments do you accept? =
+
+> We accept VISA, AMEX, MC, and PayPal.
+
+= What currencies do you accept? =
+
+> Payments will be settled in USD; however, prices will be displayed in either USD, CAD, EURO, and GBP depending on where the customer is located. If local currency is not supported, display price will default to USD.
+
+### Is there a minimum that I have to make before I get paid? =
+
+> No.
+
+### How do I receive payment? =
+
+> You get paid on the 15th of every month. We send payment to our partners via cheque.
+
+### If a customer buys prints multiple times, will they have to re-enter their billing and shipping information each time? =
+
+> Yes.
+
+### How do I make money? =
+
+> We give you a wholesale price for each item purchased. We then add on a markup of your choice. The markup is your commission on the sale of this item.
+
+### How much can I make? =
+
+> If you want to see exactly how much you make on each item purchased, you can visit the Products page in your CanvasPop API Administration Panel.
+
+### What is the default markup? =
+
+> We default our partners to a 30% markup. You are free to choose your markup rate, just send us an email at API Sales and we can change that for you.
+
+### How can I detect when a customer has completed a purchase or closed the store? =
+
+> As a customer interacts with Pop-up Store, these events (and many others) are emitted via HTML 5 pushMessage() calls. You may detect and handle these events however you wish in your application. See the Events documentation page for a list of events and their descriptions. We've also included some code samples on our Examples documentation page to help you get started.
+
+### What image file formats are accepted for use in Pop-up Store? =
+
+> We currently accept the following image file types: jpeg, jpg, tif, tiff, png, ico, wmf, emf, bmp, and gif.
+
+### What is the max file size that I may send to the API? =
+
+> 100MB.
+
+### Are there any notifications sent to customers regarding their order? =
+
+> Yes. Currently a receipt and shipping notification are sent to Pop-up Store customers. You can see examples of what these emails look like on the Examples documentation page.
+
+### Is there a way I can place a test order end-to-end when integrating Pop-up Store? =
+
+> Yes. By default your store is in TESTING mode. You may create test orders and use testing credit card numbers in order to complete orders. To activate your Pop-up Store in production click on the 'Request Activation' button in your settings.
+
+### Why does a two step preview and print image handshake exist? =
+
+> We've developed the API to support first sending us a smaller, lower resolution preview image that allows the initial handshake to be completed quickly. This allows customers to begin interacting with checkout sooner. Once this is completed and the store is opened you may begin uploading a printable, high resolution image in the background. This prevents the customer from experiencing any initial delay and gives them the option to choose sizes, fill out shipping information etc. immediately.
+
+### When using the Pull API, does the image have to reside on my own server or domain? =
+
+> No. You may load an image located at any publicly accessible URL into Pop-up Store, however you must own the rights to the image.
+
+### How are the sizes that appear in the cart drop-down menu determined? =
+
+> As soon as we know the width, height and resolution of the printable image that is being purchased (either through our /loader or Pull API endpoints) we are able to compute a set of sizes that allow for the best fit with a minimal amount of cropping. This is unique per image, and allows customers to only see sizes that make sense for the image they are purchasing.
+
+### Do I need the rights to sell the images that are uploaded? =
+
+> Yes. We can only print the item if you have the necessary rights to sell the image. All copyright images will be refused and refund will be sent to purchaser.
+
+## Screenshots
+
+* `/screenshot-1.png`
+
+## Changelog
+
+###  1.0
+* First version
+
+## Upgrade Notice
+
+### 1.0
+* First version
