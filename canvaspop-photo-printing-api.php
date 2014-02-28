@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name.
- *
- * @package   CanvasPop Photo Printing API
- * @author    Ryan Johnson <ryan@canvaspop.com>
- * @license   GPL-2.0+
- * @link      http://developer.canvaspop.com
- * @copyright 2013 CanvasPop
+ * Plugin Name: CanvasPop Photo Printing API
+ * Plugin URI: http://developer.canvaspop.com
+ * Description: CanvasPop Photo Printing API
+ * Version: 1.0
+ * Author: CanvasPop
+ * Author URI: http://developer.canvaspop.com
+ * License: GPL2
  */
 
 /**
@@ -15,7 +15,7 @@
  * TODO: Rename this class to a proper name for your plugin.
  *
  * @package CanvasPop Photo Printing API
- * @author  Ryan Johnson <ryan@canvaspop.com>
+ * @author  CanvasPop <api.support@canvaspop.com>
  */
 class CanvasPop_Photo_Printing_API {
 
@@ -71,14 +71,6 @@ class CanvasPop_Photo_Printing_API {
 		// Activate plugin when new blog is added
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
-		// Add the options page and menu item.
-		// add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
-
-		// Add an action link pointing to the options page. TODO: Rename "plugin-name.php" to the name your plugin
-		 //$plugin_basename = plugin_basename( plugin_dir_path( __FILE__ ) . 'plugin-name.php' );
-		 //add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
-
-	
 		// Load admin style sheet and JavaScript.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
@@ -243,13 +235,6 @@ class CanvasPop_Photo_Printing_API {
 	 * @return    null    Return early if no settings page is registered.
 	 */
 	public function enqueue_admin_styles() {
-		//wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'css/admin.css', __FILE__ ), array(), self::VERSION );
-		
-		/*
-		if ( ! isset( $this->plugin_screen_hook_suffix ) ) {
-			return;
-		}
-		*/
 
 		$screen = get_current_screen();
 		$snail = 'toplevel_page_canvaspop-photo-printing-api/' . $this->plugin_slug;
@@ -271,11 +256,6 @@ class CanvasPop_Photo_Printing_API {
 	 */
 	public function enqueue_admin_scripts() {
 
-		/*
-		if ( ! isset( $this->plugin_screen_hook_suffix ) ) {
-			return;
-		}
-*/
 		$screen = get_current_screen();
 		$snail = 'toplevel_page_canvaspop-photo-printing-api/' . $this->plugin_slug;
 	
@@ -312,34 +292,6 @@ class CanvasPop_Photo_Printing_API {
 		wp_localize_script( $this->plugin_slug . '-plugin-script', 'cp_scripts', $script_vars );
 	}
 
-	/**
-	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
-	 *
-	 * @since    1.0.0
-	 */
-	 /*
-	public function add_plugin_admin_menu() {
-		$this->plugin_screen_hook_suffix = add_menu_page(
-			__( 'CanvasPop Photo Printing API', $this->plugin_slug ),
-			__( 'CanvasPop Photo Printing API', $this->plugin_slug ),
-			'manage_options',
-			$this->plugin_slug,
-			array( $this, 'display_plugin_admin_page' )
-		);
-	}
-	*/
-
-
-	/**
-	 * Render the settings page for this plugin.
-	 *
-	 * @since    1.0.0
-	 */
-	 /*
-	public function display_plugin_admin_page() {
-		include_once( 'views/admin.php' );
-	}
-	*/
 	
 	/**
 	 * Add settings action link to the plugins page.
@@ -544,4 +496,4 @@ function cp_plugin_action_links( $links, $file ) {
 	return $links;
 }
 
-
+CanvasPop_Photo_Printing_API::get_instance();
