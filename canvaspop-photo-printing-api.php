@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name.
- *
- * @package   CanvasPop Photo Printing API
- * @author    Ryan Johnson <ryan@canvaspop.com>
- * @license   GPL-2.0+
- * @link      http://developer.canvaspop.com
- * @copyright 2013 CanvasPop
+ * Plugin Name: CanvasPop Photo Printing API
+ * Plugin URI: http://developer.canvaspop.com
+ * Description: CanvasPop Photo Printing API
+ * Version: 1.0.1
+ * Author: CanvasPop
+ * Author URI: http://developer.canvaspop.com
+ * License: GPL2
  */
 
 /**
@@ -15,7 +15,7 @@
  * TODO: Rename this class to a proper name for your plugin.
  *
  * @package CanvasPop Photo Printing API
- * @author  Ryan Johnson <ryan@canvaspop.com>
+ * @author  CanvasPop <api.support@canvaspop.com>
  */
 class CanvasPop_Photo_Printing_API {
 
@@ -26,7 +26,7 @@ class CanvasPop_Photo_Printing_API {
 	 *
 	 * @var     string
 	 */
-	const VERSION = '1.0.0';
+	const VERSION = '1.0.1';
 
 	/**
 	 * Unique identifier for your plugin.
@@ -71,25 +71,17 @@ class CanvasPop_Photo_Printing_API {
 		// Activate plugin when new blog is added
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
-		// Add the options page and menu item.
-		// add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
-
-		// Add an action link pointing to the options page. TODO: Rename "plugin-name.php" to the name your plugin
-		 //$plugin_basename = plugin_basename( plugin_dir_path( __FILE__ ) . 'plugin-name.php' );
-		 //add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
-
-	
 		// Load admin style sheet and JavaScript.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 
-		
+
 		// Load public-facing style sheet and JavaScript.
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );					
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-	
-		
-		
+
+
+
 		register_activation_hook(__FILE__, 'cp_add_defaults');
 		register_uninstall_hook(__FILE__, 'cp_delete_plugin_options');
 		add_action('admin_init', 'cp_init' );
@@ -243,22 +235,15 @@ class CanvasPop_Photo_Printing_API {
 	 * @return    null    Return early if no settings page is registered.
 	 */
 	public function enqueue_admin_styles() {
-		//wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'css/admin.css', __FILE__ ), array(), self::VERSION );
-		
-		/*
-		if ( ! isset( $this->plugin_screen_hook_suffix ) ) {
-			return;
-		}
-		*/
 
 		$screen = get_current_screen();
 		$snail = 'toplevel_page_canvaspop-photo-printing-api/' . $this->plugin_slug;
 		if ( $screen->id == $snail ) {
 			wp_enqueue_style( $this->plugin_slug .'-admin-colorpicker-styles', plugins_url( 'css/colorpicker.css', __FILE__ ), array(), self::VERSION );
 			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'css/admin.css', __FILE__ ), array(), self::VERSION );
-			
+
 		}
-		
+
 
 	}
 
@@ -271,14 +256,9 @@ class CanvasPop_Photo_Printing_API {
 	 */
 	public function enqueue_admin_scripts() {
 
-		/*
-		if ( ! isset( $this->plugin_screen_hook_suffix ) ) {
-			return;
-		}
-*/
 		$screen = get_current_screen();
 		$snail = 'toplevel_page_canvaspop-photo-printing-api/' . $this->plugin_slug;
-	
+
 		if ( $screen->id == $snail ) {
 			wp_enqueue_script( $this->plugin_slug . '-admin-colorpicker-script', plugins_url( 'js/colorpicker.js', __FILE__ ), array( 'jquery' ), self::VERSION );
 			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'js/admin.js', __FILE__ ), array( 'jquery' ), self::VERSION );
@@ -302,7 +282,7 @@ class CanvasPop_Photo_Printing_API {
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
-		
+
 		$access_key = get_option( 'cp_options' );
 		$script_vars = array(
 			'access_key' => $access_key[access_key],
@@ -312,35 +292,7 @@ class CanvasPop_Photo_Printing_API {
 		wp_localize_script( $this->plugin_slug . '-plugin-script', 'cp_scripts', $script_vars );
 	}
 
-	/**
-	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
-	 *
-	 * @since    1.0.0
-	 */
-	 /*
-	public function add_plugin_admin_menu() {
-		$this->plugin_screen_hook_suffix = add_menu_page(
-			__( 'CanvasPop Photo Printing API', $this->plugin_slug ),
-			__( 'CanvasPop Photo Printing API', $this->plugin_slug ),
-			'manage_options',
-			$this->plugin_slug,
-			array( $this, 'display_plugin_admin_page' )
-		);
-	}
-	*/
 
-
-	/**
-	 * Render the settings page for this plugin.
-	 *
-	 * @since    1.0.0
-	 */
-	 /*
-	public function display_plugin_admin_page() {
-		include_once( 'views/admin.php' );
-	}
-	*/
-	
 	/**
 	 * Add settings action link to the plugins page.
 	 *
@@ -447,14 +399,14 @@ function cp_render_form() {
 			<h1>CanvasPop Photo Printing API</h1>
 			<h2>Time to create your very own Pop-up Store.</h2>
 		</div><!-- /.api--header -->
-		
+
 	<div class="wrap">
 		<!-- Display Plugin Icon, Header, and Description -->
 		<!--<div class="icon32" id="icon-options-general"><br></div>-->
 		<!--<div class="icon32"><img src="<?php echo plugin_dir_url( __FILE__ ) ?>assets/canvaspop-api-logo.jpg" /></div>
 		<h2>CanvasPop Photo Printing API</h2>
 		-->
-		
+
 		<!-- Beginning of the Plugin Options Form -->
 		<form method="post" action="options.php">
 			<?php settings_fields('cp_plugin_options'); ?>
@@ -494,10 +446,10 @@ function cp_render_form() {
 		</form>
 		<br/>
 		<table class="form-table">
-			<tr>	
+			<tr>
 				<td>
 					<h2>How to use</h2>
-			
+
 					<p>Just wrap any block of images in a container with class <span class="code">.cp</span> and it will automatically add the print buttons to your images.</p>
 					<h3>Example:</h3>
 					<p class="code code--block">
@@ -521,7 +473,7 @@ function cp_render_form() {
 			</tr>
 		</table>
 	</div>
-	<?php	
+	<?php
 }
 
 // Sanitize and validate input. Accepts an array, return a sanitized array.
@@ -536,7 +488,7 @@ function cp_validate_options($input) {
 function cp_plugin_action_links( $links, $file ) {
 
 	if ( $file == plugin_basename( __FILE__ ) ) {
-		$cp_links = '<a href="'.get_admin_url().'options-general.php?page=plugin-options-starter-kit/plugin-options-starter-kit.php">'.__('Settings').'</a>';
+		$cp_links = '<a href="'.get_admin_url().'admin.php?page=canvaspop-photo-printing-api/canvaspop-photo-printing-api.php">'.__('Settings').'</a>';
 		// make the 'Settings' link appear first
 		array_unshift( $links, $cp_links );
 	}
@@ -544,4 +496,4 @@ function cp_plugin_action_links( $links, $file ) {
 	return $links;
 }
 
-
+CanvasPop_Photo_Printing_API::get_instance();
